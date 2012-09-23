@@ -1,3 +1,7 @@
+/******************************************************************************/
+/*                                 MAIN LAYOUT                                */
+/******************************************************************************/
+
 body { margin: 0; background: #e0e0e0; font-family: Arial,Helvetica,sans-serif; font-size: 10pt }
 
 a, a:link, a:visited {color: #003471; }
@@ -48,8 +52,23 @@ ul.navigation-2 ul.navigation-3 li { margin: 0; padding: 0; border: 0; clear: le
 ul.navigation-3 li a, ul.navigation-3 li a:link, ul.navigation-3 li a:visited { width: 200px; color: white; clear: left; height: 20px; padding: 5px; text-align: left; font-weight: normal; border-right: 0px; padding-left: 10px; padding-right: 10px; }
 ul.navigation-3 li a:hover, ul.navigation-3 li a:active { }
 
-.middle {}
-.content {background: white; padding: 10px;}
+.middle {background: white; padding: 5px; color: black}
+.middle .content {padding: 0;}
+.middle .content-left {float: left; width: 220px; padding: 0;}
+.middle .content-right {float: right; width: 220px; padding: 0; }
+
+.col3-layout .content {margin-left: 220px; margin-right: 200px;}
+.col2-layout-right .content {margin-right: 220px; margin-left: 0;}
+.col2-layout-left .content {margin-left: 220px; margin-right: 0;}
+.col1-layout .content-wrapper  {margin: 0;}
 
 .footer { background: #e0e0e0; border-top: 1px solid silver; font-size: smaller; }
 .footer-body { width: 1000px; margin: 0 auto; color: gray; text-align: center; padding: 20px 0 30px 0; background: #ebebeb; }
+
+.footer { background: #e0e0e0; border-top: 1px solid silver; font-size: smaller; }
+.footer-body { width: 1000px; margin: 0 auto; color: gray; text-align: center; padding: 20px 0 30px 0; background: #ebebeb; }
+
+/******************************************************************************/
+/*                                 CONTENT PAGE                               */
+/******************************************************************************/
+.content-title {font-size: 24px; font-weight: bolder; border-bottom: 1px solid silver; margin: 10px 0 20px 0;}
