@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	<ui:insert name="metadata" />
+	<ui:insert name="postMetadata"/>
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/styles/common/style.css" />
+		<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/styles/default.css" />
+        <title>InLance - <ui:insert name="title">Title</ui:insert></title>
+    </h:head>
+
+    <h:body>
+		<p:ajaxStatus>
+			<f:facet name="start">
+				<div class="ajax-status-start">
+					<h:graphicImage value="#{resource['styles:common/images/ui-anim_basic_16x16.gif']}"  />
+					<h:outputText value="Loading..." />
+				</div>
+			</f:facet>  
+			<f:facet name="complete"><h:outputText /></f:facet>
+		</p:ajaxStatus>
+		<div class="wrapper">
+			<div class="header">
+				<div class="header-top">
+					<div class="logo"><!-- TODO: Ganti dengan logo -->
+						<h:outputLink value="#{request.contextPath}"><h2>InLance</h2></h:outputLink>
+					</div>
+					<div class="static-nav">
+						<h:outputLink value="#{request.contextPath}">Signup</h:outputLink> |
+						<h:outputLink value="#{request.contextPath}">Login</h:outputLink> |
+						<h:outputLink value="#{request.contextPath}">Help</h:outputLink>
+					</div>					
+					<br class="clearer" />
+				</div>
+				<div class="header-navigation" >
+					<h:form id="navigationForm">
+						<ul class="navigation-1">
+							<li><h:outputLink>Talent dan Expert</h:outputLink></li>
+							<li><h:outputLink>Proyek</h:outputLink></li>
+							<li><h:outputLink>Kontes dan Perlombaan</h:outputLink></li>
+							<li><h:outputLink>Menu 1<span class="expand">&#x25BC;</span></h:outputLink>
+								<ul class="navigation-2">
+									<li><h:outputLink>Menu 1.1<span class="expand">&#x25BA;</span></h:outputLink>
+										<ul class="navigation-3">
+											<li><h:outputLink value="#{request.contextPath}/index.xhtml" >Menu 1.1.1</h:outputLink></li>
+											<li><h:outputLink value="#{request.contextPath}/index.xhtml" >Menu 1.1.2</h:outputLink></li>
+										</ul>
+									</li>
+									<li><h:outputLink>Menu 1.2<span class="expand">&#x25BA;</span></h:outputLink>
+										<ul class="navigation-3">
+											<li><h:outputLink value="#{request.contextPath}/index.xhtml" >Menu 1.2.1</h:outputLink></li>
+											<li><h:outputLink value="#{request.contextPath}/index.xhtml" >Menu 1.2.2</h:outputLink></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</h:form>
+				</div>
+			</div>
+			<div class="middle">
+				<div class="content">
+					<ui:insert name="content">Content</ui:insert>
+				</div>
+			</div>
+			<div class="foter">
+				<div class="footer-body">
+					<h:outputText value="#{appterm.company}" /><br />
+					&#169; <h:outputText value="#{appterm.copyright}" />. All Rights Reserved<br/>
+				</div>
+			</div>
+		</div>
+    </h:body>
+
+</html>

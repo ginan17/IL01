@@ -1,0 +1,18 @@
+/* ajax status */
+
+.ajax-status-start {
+	position : fixed;
+	bottom: 5px;
+	right: 5px;
+	padding: 10px;
+	font-weight: bold;
+	background-color: rgba(44, 44, 44, 0.75);
+	color: white;
+	font-size: 12px;
+	z-index: 100;
+	-webkit-border-radius : 10px;
+	border-radius: 10px;
+	-moz-border-radius : 4px 4px 4px 4px;
+}
+
+.ajax-status-start img {margin-right: 5px;}
