@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+          xmlns:p="http://primefaces.org/ui"
+          xmlns:f="http://java.sun.com/jsf/core">
 
     <h:body>
         <ui:composition template="/WEB-INF/template/commonPage.xhtml">
@@ -13,15 +14,35 @@
                 Side Panel
             </ui:define>
             <ui:define name="content">
-				<p:dataTable>
+                            <p:dataTable id="dataTable" var="project" value="#{tableBean.projects}" 
+                                         paginator="true" rows="10"
+                                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                         rowsPerPageTemplate="5,10,15"
+                                         >
+                                <f:facet name="header">  
+                                   Ajax Pagination  
+                                </f:facet>  
+                            
 					<p:column headerText="Nama Project">
-						
+						 <h:outputText value="#{project.name}" />  
 					</p:column>
 					<p:column headerText="Jenis">
-						
+						<h:outputText value="#{project.type}" />  
 					</p:column>
-					<p:column headerText="Deskripsi">
-						
+                                        <p:column headerText="Bid">
+						<h:outputText value="#{project.bid}" />  
+					</p:column>
+                                        <p:column headerText="Rata-rata Bid(Rupiah)">
+						<h:outputText value="#{project.avg}" />  
+					</p:column>
+                                        <p:column headerText="Keahlian yang dibutuhkan">
+						<h:outputText value="#{project.skill}" />  
+					</p:column>
+                                        <p:column headerText="Mulai Bid">
+						<h:outputText value="#{project.startDate}" /> 
+					</p:column>
+					<p:column headerText="Akhir Bid">
+						<h:outputText value="#{project.endDate}" /> 
 					</p:column>
 				</p:dataTable>
             </ui:define>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:p="http://primefaces.org/ui"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="/WEB-INF/template/commonPage.xhtml">
+        <ui:define name="content">
+        <h:body>
+                
+
+                <h:panelGrid columns="2">  
+                    <h:outputLabel value="Alamat Email :" for="email"/>
+                    <p:inputText id="email" /> 
+
+                    <h:outputLabel value="Nama Awal :" for="firstname"/>
+                    <p:inputText id="firstname" /> 
+
+                    <h:outputLabel value="Nama Akhir :" for="lastname"/>
+                    <p:inputText id="lastname" /> 
+                    
+                    <h:outputLabel value="Username :" for="userName"/>
+                    <p:inputText id="userName" /> 
+
+                    <h:outputLabel for="pwd1" value="Password: *" />  
+                    <p:password id="pwd1" match="pwd2" label="Password 1" required="true"/>  
+  
+                    <h:outputLabel for="pwd2" value="Ulangi Password: *" />  
+                    <p:password id="pwd2" label="Password 2" required="true"/>  
+                    
+                    <h:outputText value="Negara: " />  
+                    <p:selectOneMenu value="#{buttonBean.number}">  
+                        <f:selectItem itemLabel="Select One" itemValue="" />  
+                        <f:selectItem itemLabel="Indonesia" itemValue="1" />  
+                        <f:selectItem itemLabel="Lainnya" itemValue="2" />  
+                        <f:selectItem itemLabel="" itemValue="3" />  
+                    </p:selectOneMenu> 
+                    
+                    <p:commandButton value="Reset" type="reset" />  
+                    <p:commandButton value="Login" type="submit" />
+                    
+                </h:panelGrid>
+        </h:body>
+        </ui:define>
+    </ui:composition>
+</html>
